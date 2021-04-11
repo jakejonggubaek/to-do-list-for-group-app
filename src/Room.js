@@ -16,7 +16,7 @@ function Room(props) {
     const roomId = props.match.params.uniqueKey;
 
     useEffect(()=>{
-        axios.put("http://team-to-do-app.herokuapp.com/read", { id: roomId }).then((response) => {
+        axios.put("https://team-to-do-app.herokuapp.com/read", { id: roomId }).then((response) => {
 
             setRoomName(response.data.roomName);
             setPassword(response.data.password);
@@ -31,7 +31,7 @@ function Room(props) {
     }, [roomId])
 
     useEffect(() => {
-        axios.put("http://team-to-do-app.herokuapp.com/update",
+        axios.put("https://team-to-do-app.herokuapp.com/update",
             {
                 id: roomId,
                 toDoList: toDoList,

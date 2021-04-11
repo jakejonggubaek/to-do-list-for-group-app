@@ -16,7 +16,7 @@ function Create() {
     }
 
     const addToList = (name, password) => {
-        axios.post("http://team-to-do-app.herokuapp.com/insert", {
+        axios.post("https://team-to-do-app.herokuapp.com/insert", {
             roomName: name,
             password: password,
             toDoList: []
