@@ -16,7 +16,7 @@ function Room(props) {
     const roomId = props.match.params.uniqueKey;
 
     useEffect(()=>{
-        axios.put("http://localhost:3001/read", { id: roomId }).then((response) => {
+        axios.put("https://to-do-app-with-mern.herokuapp.com/read", { id: roomId }).then((response) => {
 
             setRoomName(response.data.roomName);
             setPassword(response.data.password);
@@ -31,7 +31,7 @@ function Room(props) {
     }, [roomId])
 
     useEffect(() => {
-        axios.put("http://localhost:3001/update",
+        axios.put("https://to-do-app-with-mern.herokuapp.com/update",
             {
                 id: roomId,
                 toDoList: toDoList,
