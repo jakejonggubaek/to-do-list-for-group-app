@@ -169,7 +169,7 @@ section {
   min-width: 500px;
 
   @include mobileMQ {
-    min-width: 300px;
+    max-width: 320px;
   }
 
   h3 {
