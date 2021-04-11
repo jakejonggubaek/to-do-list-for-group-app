@@ -139,7 +139,7 @@ function Room(props) {
                         {displayedToDoList.map((list, index)=>{
                             return(
                                 <li key={index} id={index}>
-                                    <div>
+                                    <div className="list-container">
                                         {list.isDone ?
                                         <button onClick={handleClick} className={"toggle-button " + (list.isDone ? 'list-done' : '')}>&#9745;</button>
                                         : <button onClick={handleClick} className={"toggle-button " + (list.isDone ? 'list-done' : '')}>&#9746;</button>

@@ -76,10 +76,6 @@ button {
   max-width: 1300px;
 }
 
-section {
-
-}
-
 //landing.js 
 
 .landing {
@@ -165,12 +161,11 @@ section {
 }
 
 .room {
-
   min-width: 500px;
 
   @include mobileMQ {
     min-width: 100px;
-    max-width: 320px;
+    width: 320px;
   }
 
   h3 {
@@ -187,15 +182,26 @@ section {
     list-style: none;
     border-radius: 10px;
     color: #2b5876;
+    overflow-y: auto;
+
+    @include mobileMQ {
+      max-height: 50vh;
+    }
 
     li {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      div {
+      .list-container {
+        width: 80%;
         display: flex;
         align-items: center;
+
+        p {
+          width: 90%;
+          word-wrap:break-word;
+        }
       }
 
       .toggle-button {

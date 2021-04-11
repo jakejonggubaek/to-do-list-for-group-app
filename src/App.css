@@ -442,6 +442,13 @@ button:hover, button:focus {
   min-width: 500px;
 }
 
+@media (max-width: 650px) {
+  .room {
+    min-width: 100px;
+    width: 320px;
+  }
+}
+
 .room h3 {
   font-weight: bold;
   margin-bottom: 20px;
@@ -456,6 +463,13 @@ button:hover, button:focus {
   list-style: none;
   border-radius: 10px;
   color: #2b5876;
+  overflow-y: auto;
+}
+
+@media (max-width: 650px) {
+  .room ul {
+    max-height: 50vh;
+  }
 }
 
 .room ul li {
@@ -470,13 +484,19 @@ button:hover, button:focus {
           justify-content: space-between;
 }
 
-.room ul li div {
+.room ul li .list-container {
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.room ul li .list-container p {
+  width: 90%;
+  word-wrap: break-word;
 }
 
 .room ul li .toggle-button {
