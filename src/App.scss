@@ -1,0 +1,255 @@
+@import 'setup';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  background: #2b5876;
+  background: -webkit-linear-gradient(to right, #2b5876, #4e4376);
+  background: linear-gradient(to right, #2b5876, #4e4376);
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 150px);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  font-size: small;
+}
+
+h1, h2 {
+  text-align: center;
+  margin: 0;
+  font-weight: 100;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+}
+
+button {
+  margin: 10px 0;
+  background-color: #4FA2F4;
+  border: none;
+  height: 50px;
+  color: white;
+
+  &:hover, &:focus {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+}
+
+.wrapper {
+  max-width: 1300px;
+}
+
+section {
+
+}
+
+//landing.js 
+
+.landing {
+
+  form {
+
+    h2 {
+      margin: 10px;
+    }
+
+    .input {
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+      background-color: lightgrey;
+      border: none;
+      height: 50px;
+      margin: 10px 0;
+      padding: 0 10px;
+    }
+  }
+
+  .url-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+
+    .button-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        width: 46%;
+      }
+    }
+
+    p {
+      font-weight: bold;
+    }
+
+    .url {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+  
+}
+
+
+//Room.js
+.addToDo {
+  display: flex;
+  flex-direction: row;
+
+  form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+    input {
+      width: 70%;
+      height: 50px;
+      background-color: lightgray;
+      border: none;
+      padding: 0 10px;
+      margin-right: 10px;
+    }
+
+    button {
+      width: 30%;
+      height: 50px;
+    }
+  }
+}
+
+.room {
+
+  min-width: 500px;
+
+  h3 {
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2b5876;
+  }
+
+  ul {
+    position: relative;
+    padding: 20px;
+    margin: 0 20px;
+    background-color: white;
+    list-style: none;
+    border-radius: 10px;
+    color: #2b5876;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      div {
+        display: flex;
+        align-items: center;
+      }
+
+      .toggle-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 3;
+        width: 20px;
+        height: 10px;
+        border-radius: 5%;
+        font-size: 30px;
+        border: none;
+        background-color: white;
+        color: #d00a2b;
+        font-weight: bold;
+        text-align: center;
+        margin-right: 5px;
+      }
+
+      input {
+        width: 20px;
+        height: 20px;
+        justify-items: flex-end;
+      }
+    }
+  }
+
+  .to-do-complete {
+    position: absolute;
+    right: 0;
+    width:100px;
+    color: #0A9928;
+    border: 5px solid #0A9928;
+    -webkit-mask-position: 13rem 6rem;
+    transform: rotate(14deg);
+    border-radius: 0;
+    font-weight: bold;
+  } 
+}
+
+.password {
+  .password-container {
+    width: 100%;
+    background-color: lightgrey;
+    border: none;
+    height: 50px;
+    margin: 10px 0;
+    padding: 0 10px;
+  }
+}
+
+
+.list-done {
+  color: green !important;
+}
+
+.font-circle:hover, .font-circle:focus {
+  cursor: pointer;
+}
+
+.to-do-complete {
+  display: block;
+}
