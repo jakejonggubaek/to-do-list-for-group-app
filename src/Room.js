@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import bin from './assets/garbage.png';
+import bin from './garbage.png';
 
 function Room(props) {
 
@@ -16,7 +16,7 @@ function Room(props) {
     const roomId = props.match.params.uniqueKey;
 
     useEffect(()=>{
-        axios.put("https://to-do-app-with-mern.herokuapp.com/read", { id: roomId }).then((response) => {
+        axios.put("http://team-to-do-app.herokuapp.com/read", { id: roomId }).then((response) => {
 
             setRoomName(response.data.roomName);
             setPassword(response.data.password);
@@ -31,7 +31,7 @@ function Room(props) {
     }, [roomId])
 
     useEffect(() => {
-        axios.put("https://to-do-app-with-mern.herokuapp.com/update",
+        axios.put("http://team-to-do-app.herokuapp.com/update",
             {
                 id: roomId,
                 toDoList: toDoList,
