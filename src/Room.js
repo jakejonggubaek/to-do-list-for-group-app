@@ -83,11 +83,8 @@ function Room(props) {
     const handleDelete = (e) => {
 
         let index = e.target.parentElement.id;
-        console.log(index);
-        
         let toDoArray = [...toDoList];
         toDoArray.splice(index, 1);
-        console.log(toDoArray);
         setToDoList(toDoArray);
         
     }
