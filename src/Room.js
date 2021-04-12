@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import bin from './garbage.png';
+import Loading from './Loading';
 
 function Room(props) {
 
@@ -12,6 +13,7 @@ function Room(props) {
     const [toDoList, setToDoList] = useState([]);
     const [displayedToDoList, setDisplayedToDoList] = useState([]);
     const [allDone, setAllDone] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     const roomId = props.match.params.uniqueKey;
 
@@ -25,6 +27,7 @@ function Room(props) {
             if (!response.data.password){
                 setAuthorized(true);
             }
+            setIsLoading(false);
             
         });
 
@@ -117,52 +120,55 @@ function Room(props) {
 
     return(
         <>
-            {authorized?
-            <div className="room">
-                <div>
-                    <h2>welcome to the room for {roomName}!</h2>
-                    <div className='addToDo'>
-                        <form onSubmit={handleSubmit}>
-                            <label htmlFor="toDo" className="sr-only"></label>
-                            <input type="text" id="toDo" required placeholder="Add your list here" value={toDo.toDo} onChange={handleChange} />
-                            <button type="submit">Add</button>
-                        </form>
+            {isLoading?<Loading />
+            :<section>
+                {authorized?
+                <div className="room">
+                    <div>
+                        <h2>welcome to the room for {roomName}!</h2>
+                        <div className='addToDo'>
+                            <form onSubmit={handleSubmit}>
+                                <label htmlFor="toDo" className="sr-only"></label>
+                                <input type="text" id="toDo" required placeholder="Add your list here" value={toDo.toDo} onChange={handleChange} />
+                                <button type="submit">Add</button>
+                            </form>
+                        </div>
+                        
+                        {displayedToDoList?
+                        <ul>
+                                    {allDone ?
+                                        <div className='to-do-complete'>COMPLETED</div>
+                                        : <div></div>
+                                    }
+                            <h3>To Do LIST</h3>
+                            {displayedToDoList.map((list, index)=>{
+                                return(
+                                    <li key={index} id={index}>
+                                        <div className="list-container">
+                                            {list.isDone ?
+                                            <button onClick={handleClick} className={"toggle-button " + (list.isDone ? 'list-done' : '')}>&#9745;</button>
+                                            : <button onClick={handleClick} className={"toggle-button " + (list.isDone ? 'list-done' : '')}>&#9746;</button>
+                                            }
+                                            <p>{list.toDo}</p>
+                                        </div>
+                                        <input onClick={handleDelete} type="image" src={bin} name="submit" width="100" height="48" alt="delete-button" />
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                        :<ul></ul>}
                     </div>
-                    
-                    {displayedToDoList?
-                    <ul>
-                                {allDone ?
-                                    <div className='to-do-complete'>COMPLETED</div>
-                                    : <div></div>
-                                }
-                        <h3>To Do LIST</h3>
-                        {displayedToDoList.map((list, index)=>{
-                            return(
-                                <li key={index} id={index}>
-                                    <div className="list-container">
-                                        {list.isDone ?
-                                        <button onClick={handleClick} className={"toggle-button " + (list.isDone ? 'list-done' : '')}>&#9745;</button>
-                                        : <button onClick={handleClick} className={"toggle-button " + (list.isDone ? 'list-done' : '')}>&#9746;</button>
-                                        }
-                                        <p>{list.toDo}</p>
-                                    </div>
-                                    <input onClick={handleDelete} type="image" src={bin} name="submit" width="100" height="48" alt="delete-button" />
-                                </li>
-                            )
-                        })}
-                    </ul>
-                    :<ul></ul>}
                 </div>
-                
-            </div>
-                : <div className="password">
-                <form onSubmit={handleAuthorize}>
-                        <label className="sr-only" htmlFor="password"></label>
-                        <input className="password-container" type="text" id="password" value={typedPassword} placeholder="PASSWORD" onChange={(e)=>{setTypedPassword(e.target.value)}}/>
-                    <button type="submit">Enter the Room</button>
-                </form>
-            </div>
-            }
+                :<div className="password">
+                    <form onSubmit={handleAuthorize}>
+                            <label className="sr-only" htmlFor="password"></label>
+                            <input className="password-container" type="text" id="password" value={typedPassword} placeholder="PASSWORD" onChange={(e)=>{setTypedPassword(e.target.value)}}/>
+                        <button type="submit">Enter the Room</button>
+                    </form>
+                </div>
+                }
+            </section> 
+            }   
         </>
     )
 }

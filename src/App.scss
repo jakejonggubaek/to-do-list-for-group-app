@@ -1,5 +1,6 @@
 @import 'setup';
 @import 'mixin';
+@import 'loading';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 * {
@@ -231,7 +232,7 @@ button {
 
   .to-do-complete {
     position: absolute;
-    right: 0;
+    right: 10px;
     width:100px;
     color: #0A9928;
     border: 5px solid #0A9928;
