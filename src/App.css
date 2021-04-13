@@ -416,6 +416,14 @@ button:hover, button:focus {
   background-color: white;
   color: black;
   border-radius: 10px;
+  min-width: 500px;
+}
+
+@media (max-width: 650px) {
+  .landing .url-container {
+    min-width: 100px;
+    width: 320px;
+  }
 }
 
 .landing .url-container .button-container {
