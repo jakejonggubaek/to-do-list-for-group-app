@@ -47,18 +47,7 @@ function Create(props) {
         <>
             {isLoading?<Loading />
             :<section className="landing wrapper">
-                <form onSubmit={handleSubmit}>
-                    <h2>CREATE YOUR TEAM ROOM</h2>
-                    <div className="input">
-                        <label htmlFor=""></label>
-                        <input required type="text" placeholder="TEAM NAME" onChange={(e) => { setName(e.target.value) }} />
-                    </div>
-                    <div className="input">
-                        <label htmlFor=""></label>
-                        <input type="text" placeholder="PASSWORD(optional)" onChange={(e) => { setPassword(e.target.value) }} />
-                    </div>
-                    <button type="submit">CREATE</button>
-                </form>
+                
                 <div>
                     {isCreated?
                     <div className="url-container">
@@ -70,7 +59,18 @@ function Create(props) {
                             <button onClick={redirect}>Go to Your Room</button>
                         </div>
                     </div>
-                    : <div></div>}
+                    : <form onSubmit={handleSubmit}>
+                        <h2>CREATE YOUR TEAM ROOM</h2>
+                        <div className="input">
+                            <label htmlFor=""></label>
+                            <input required type="text" placeholder="TEAM NAME" onChange={(e) => { setName(e.target.value) }} />
+                        </div>
+                        <div className="input">
+                            <label htmlFor=""></label>
+                            <input type="text" placeholder="PASSWORD(optional)" onChange={(e) => { setPassword(e.target.value) }} />
+                        </div>
+                        <button type="submit">CREATE</button>
+                    </form>}
                 </div>
             </section>
             }
