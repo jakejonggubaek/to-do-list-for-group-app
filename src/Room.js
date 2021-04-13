@@ -103,8 +103,6 @@ function Room(props) {
         }
         setToDoList(toDoArray);
         e.target.classList.toggle('list-done');
-        console.log(e.target);
-        
 
         //animation trigger when toDoList is all done
         let copiedArray = [...toDoList];
@@ -113,7 +111,7 @@ function Room(props) {
         })
 
         if (isDoneList.every((value) => { return value === true })) {
-            console.log('congrats!!');
+
         }
     }
 
