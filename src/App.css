@@ -466,6 +466,7 @@ section {
 
 .room {
   width: 100%;
+  max-width: 1300px;
 }
 
 @media (max-width: 650px) {

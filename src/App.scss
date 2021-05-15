@@ -149,6 +149,7 @@ section {
 
 .room {
   width: 100%;
+  max-width: 1300px;
 
   @include mobileMQ {
     min-width: 100px;
