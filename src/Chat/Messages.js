@@ -12,7 +12,6 @@ const Messages = ({ messages, name }) => {
             
             {
                 messages.map((message, i) => {
-                    console.log(message);
                     return (
                         <div key={i}>
                             <Message message={message} name={name} />
