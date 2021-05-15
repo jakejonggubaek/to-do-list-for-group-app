@@ -4,9 +4,6 @@ import Message from './Message';
 
 const Messages = ({ messages, name }) => {
 
-    
-    
-
     return (
         <ScrollToBottom className="message-container-screen" followButtonClassName='follow-button'>
             
