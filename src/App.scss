@@ -1,7 +1,7 @@
 @import 'setup';
 @import 'mixin';
 @import 'loading';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap&family=Saira:wght@500&display=swap');
 
 * {
   margin: 0;
@@ -11,11 +11,9 @@
 .App {
   width: 100vw;
   height: 100vh;
-  background: #2b5876;
-  background: -webkit-linear-gradient(to right, #2b5876, #4e4376);
-  background: linear-gradient(to right, #2b5876, #4e4376);
-  font-family: 'Roboto', sans-serif;
-  color: white;
+  background: #EEE2DC;
+  font-family: 'Asap', sans-serif;
+  color: #123C69;
 }
 
 header {
@@ -44,27 +42,45 @@ footer {
   font-size: small;
 }
 
-h1, h2 {
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Saira', sans-serif;
   text-align: center;
   margin: 0;
-  font-weight: 100;
+}
+
+h3 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #2b5876;
+  padding: 5px;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-  padding: 20px;
-  background-color: white;
-  color: black;
-  border-radius: 10px;
-}
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+
+    input {
+      width: 100%;
+      background-color: lightgrey;
+      border: none;
+      height: 40px;
+      margin: 10px 0;
+      padding: 0 10px;
+      border-radius: 10px;
+    }
+  }
 
 button {
   margin: 10px 0;
-  background-color: #4FA2F4;
+  background-color: #AC3B61;
   border: none;
-  height: 50px;
+  border-radius: 10px;
+  height: 40px;
   color: white;
 
   &:hover, &:focus {
@@ -81,25 +97,9 @@ button {
 
 .landing {
 
-  form {
-
-    h2 {
-      margin: 10px;
-    }
-
-    .input {
+  .input-container {
       width: 100%;
     }
-
-    input {
-      width: 100%;
-      background-color: lightgrey;
-      border: none;
-      height: 50px;
-      margin: 10px 0;
-      padding: 0 10px;
-    }
-  }
 
   .url-container {
     display: flex;
@@ -136,12 +136,180 @@ button {
       margin: 10px 0;
     }
   }
-  
 }
 
 
 //Room.js
-.addToDo {
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.room {
+  width: 100%;
+
+  @include mobileMQ {
+    min-width: 100px;
+    width: 320px;
+  }
+
+  .main-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+  }
+
+  .chat, .note {
+     width: 30%;
+     height: 400px;
+  }
+
+  //chat section
+  .chat {
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+
+    .message-container-screen {
+      display: flex;
+      flex-direction: column;
+  
+      height: 180px;
+      overflow-y: auto;
+
+      .follow-button {
+        display: none;
+      }
+    }
+
+    .message-container {
+      display: flex;
+      margin: 5px;
+
+      .message-box {
+        margin: 0 5px;
+      }
+    }
+
+    .justifyEnd {
+      flex-direction: row-reverse;
+    }
+
+    .message-text {
+      padding: 5px;
+      border-radius: 5px;
+      color: #EEE2DC;
+      background-color: #123C69;
+      width: auto;
+    }
+
+    .textContainer {
+      height: 100px;
+    }
+
+    .chat-form {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      margin: 0;
+
+      button {
+        margin-left: 5px;
+      }
+    }
+
+    .users-container {
+      .active-users-container > p {
+        display: flex;
+
+        div {
+          margin: 3px;
+        }
+      }
+    }
+  }
+
+  //to-do-list
+  .to-do-list-container {
+    width: 40%;
+
+    ul {
+      position: relative;
+      padding: 20px;
+      margin: 0 20px;
+      background-color: white;
+      list-style: none;
+      border-radius: 10px;
+      color: #2b5876;
+      max-height: 270px;
+      overflow-y: auto;
+
+      @include mobileMQ {
+        max-height: 50vh;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .list-container {
+          width: 80%;
+          display: flex;
+          align-items: center;
+
+          p {
+            width: 90%;
+            word-wrap:break-word;
+          }
+        }
+
+        .toggle-button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 3;
+          width: 20px;
+          height: 10px;
+          border-radius: 5%;
+          font-size: 30px;
+          border: none;
+          background-color: white;
+          color: #d00a2b;
+          font-weight: bold;
+          text-align: center;
+          margin-right: 5px;
+        }
+
+        input {
+          width: 20px;
+          height: 20px;
+          justify-items: flex-end;
+        }
+      }
+    }
+  }
+
+  //note section
+  .note {
+    background-color: #BAB2B5;
+    margin: 20px;
+    border-radius: 10px;
+
+    .text-area {
+      height: 100%;
+    }
+  }
+
+
+
+
+
+.add-to-do {
   display: flex;
   flex-direction: row;
 
@@ -167,75 +335,6 @@ button {
   }
 }
 
-.room {
-  min-width: 500px;
-
-  @include mobileMQ {
-    min-width: 100px;
-    width: 320px;
-  }
-
-  h3 {
-    font-weight: bold;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #2b5876;
-  }
-
-  ul {
-    position: relative;
-    padding: 20px;
-    margin: 0 20px;
-    background-color: white;
-    list-style: none;
-    border-radius: 10px;
-    color: #2b5876;
-    overflow-y: auto;
-
-    @include mobileMQ {
-      max-height: 50vh;
-    }
-
-    li {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      .list-container {
-        width: 80%;
-        display: flex;
-        align-items: center;
-
-        p {
-          width: 90%;
-          word-wrap:break-word;
-        }
-      }
-
-      .toggle-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 3;
-        width: 20px;
-        height: 10px;
-        border-radius: 5%;
-        font-size: 30px;
-        border: none;
-        background-color: white;
-        color: #d00a2b;
-        font-weight: bold;
-        text-align: center;
-        margin-right: 5px;
-      }
-
-      input {
-        width: 20px;
-        height: 20px;
-        justify-items: flex-end;
-      }
-    }
-  }
-
   .to-do-complete {
     position: absolute;
     right: 10px;
@@ -250,6 +349,8 @@ button {
 }
 
 .password {
+  width: 30%;
+
   .password-container {
     width: 100%;
     background-color: lightgrey;

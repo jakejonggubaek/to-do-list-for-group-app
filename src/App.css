@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Asap&family=Saira:wght@500&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -294,11 +294,9 @@ template {
 .App {
   width: 100vw;
   height: 100vh;
-  background: #2b5876;
-  background: -webkit-gradient(linear, left top, right top, from(#2b5876), to(#4e4376));
-  background: linear-gradient(to right, #2b5876, #4e4376);
-  font-family: 'Roboto', sans-serif;
-  color: white;
+  background: #EEE2DC;
+  font-family: 'Asap', sans-serif;
+  color: #123C69;
 }
 
 header {
@@ -345,10 +343,16 @@ footer {
   font-size: small;
 }
 
-h1, h2 {
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Saira', sans-serif;
   text-align: center;
   margin: 0;
-  font-weight: 100;
+}
+
+h3 {
+  margin-bottom: 10px;
+  border-bottom: 2px solid #2b5876;
+  padding: 5px;
 }
 
 form {
@@ -366,11 +370,22 @@ form {
   border-radius: 10px;
 }
 
+form input {
+  width: 100%;
+  background-color: lightgrey;
+  border: none;
+  height: 40px;
+  margin: 10px 0;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+
 button {
   margin: 10px 0;
-  background-color: #4FA2F4;
+  background-color: #AC3B61;
   border: none;
-  height: 50px;
+  border-radius: 10px;
+  height: 40px;
   color: white;
 }
 
@@ -383,21 +398,8 @@ button:hover, button:focus {
   max-width: 1300px;
 }
 
-.landing form h2 {
-  margin: 10px;
-}
-
-.landing form .input {
+.landing .input-container {
   width: 100%;
-}
-
-.landing form input {
-  width: 100%;
-  background-color: lightgrey;
-  border: none;
-  height: 50px;
-  margin: 10px 0;
-  padding: 0 10px;
 }
 
 .landing .url-container {
@@ -449,46 +451,21 @@ button:hover, button:focus {
   margin: 10px 0;
 }
 
-.addToDo {
+section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.addToDo form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
 }
 
-.addToDo form input {
-  width: 70%;
-  height: 50px;
-  background-color: lightgray;
-  border: none;
-  padding: 0 10px;
-  margin-right: 10px;
-}
-
-.addToDo form button {
-  width: 30%;
-  height: 50px;
-}
-
 .room {
-  min-width: 500px;
+  width: 100%;
 }
 
 @media (max-width: 650px) {
@@ -498,13 +475,106 @@ button:hover, button:focus {
   }
 }
 
-.room h3 {
-  font-weight: bold;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #2b5876;
+.room .main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 20px;
 }
 
-.room ul {
+.room .chat, .room .note {
+  width: 30%;
+  height: 400px;
+}
+
+.room .chat {
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.room .chat .message-container-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 180px;
+  overflow-y: auto;
+}
+
+.room .chat .message-container-screen .follow-button {
+  display: none;
+}
+
+.room .chat .message-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px;
+}
+
+.room .chat .message-container .message-box {
+  margin: 0 5px;
+}
+
+.room .chat .justifyEnd {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.room .chat .message-text {
+  padding: 5px;
+  border-radius: 5px;
+  color: #EEE2DC;
+  background-color: #123C69;
+  width: auto;
+}
+
+.room .chat .textContainer {
+  height: 100px;
+}
+
+.room .chat .chat-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0;
+}
+
+.room .chat .chat-form button {
+  margin-left: 5px;
+}
+
+.room .chat .users-container .active-users-container > p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.room .chat .users-container .active-users-container > p div {
+  margin: 3px;
+}
+
+.room .to-do-list-container {
+  width: 40%;
+}
+
+.room .to-do-list-container ul {
   position: relative;
   padding: 20px;
   margin: 0 20px;
@@ -512,16 +582,17 @@ button:hover, button:focus {
   list-style: none;
   border-radius: 10px;
   color: #2b5876;
+  max-height: 270px;
   overflow-y: auto;
 }
 
 @media (max-width: 650px) {
-  .room ul {
+  .room .to-do-list-container ul {
     max-height: 50vh;
   }
 }
 
-.room ul li {
+.room .to-do-list-container ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -533,7 +604,7 @@ button:hover, button:focus {
           justify-content: space-between;
 }
 
-.room ul li .list-container {
+.room .to-do-list-container ul li .list-container {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -543,12 +614,12 @@ button:hover, button:focus {
           align-items: center;
 }
 
-.room ul li .list-container p {
+.room .to-do-list-container ul li .list-container p {
   width: 90%;
   word-wrap: break-word;
 }
 
-.room ul li .toggle-button {
+.room .to-do-list-container ul li .toggle-button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -571,10 +642,58 @@ button:hover, button:focus {
   margin-right: 5px;
 }
 
-.room ul li input {
+.room .to-do-list-container ul li input {
   width: 20px;
   height: 20px;
   justify-items: flex-end;
+}
+
+.room .note {
+  background-color: #BAB2B5;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.room .note .text-area {
+  height: 100%;
+}
+
+.room .add-to-do {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.room .add-to-do form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.room .add-to-do form input {
+  width: 70%;
+  height: 50px;
+  background-color: lightgray;
+  border: none;
+  padding: 0 10px;
+  margin-right: 10px;
+}
+
+.room .add-to-do form button {
+  width: 30%;
+  height: 50px;
 }
 
 .room .to-do-complete {
@@ -588,6 +707,10 @@ button:hover, button:focus {
           transform: rotate(14deg);
   border-radius: 0;
   font-weight: bold;
+}
+
+.password {
+  width: 30%;
 }
 
 .password .password-container {

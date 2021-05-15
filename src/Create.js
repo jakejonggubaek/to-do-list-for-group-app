@@ -61,11 +61,11 @@ function Create(props) {
                     </div>
                     : <form onSubmit={handleSubmit}>
                         <h2>CREATE YOUR TEAM ROOM</h2>
-                        <div className="input">
+                        <div className="input-container">
                             <label htmlFor=""></label>
                             <input required type="text" placeholder="TEAM NAME" onChange={(e) => { setName(e.target.value) }} />
                         </div>
-                        <div className="input">
+                            <div className="input-container">
                             <label htmlFor=""></label>
                             <input type="text" placeholder="PASSWORD(optional)" onChange={(e) => { setPassword(e.target.value) }} />
                         </div>
