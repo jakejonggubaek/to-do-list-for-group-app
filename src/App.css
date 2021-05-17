@@ -623,6 +623,7 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 0 10px;
 }
 
 .room .chat .users-container .active-users-container > p div {
