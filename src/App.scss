@@ -22,6 +22,14 @@ header {
   align-items: center;
   width: 100%;
   height: 100px;
+
+  @include mobileMQ {
+    height: 70px;
+
+    h1 {
+      font-size: 25px;
+    }
+  }
 }
 
 main {
@@ -30,7 +38,11 @@ main {
   align-items: center;
   display: flex;
   width: 100%;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 130px);
+
+  @include mobileMQ {
+    height: calc(100vh - 90px);
+  }
 }
 
 footer {
@@ -96,7 +108,6 @@ button {
 }
 
 //landing.js 
-
 .landing {
 
   .input-container {
@@ -160,11 +171,16 @@ section {
   @include mobileMQ {
     min-width: 100px;
     width: 320px;
+
+    h2 {
+      font-size: 20px;
+    }
   }
 
   .main-container {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     margin-top: 20px;
 
     @include tabletMQ {
@@ -173,6 +189,7 @@ section {
 
   }
 
+  //toggle button for tablet & mobile screen
   .button-container {
       display: flex;
       margin-left: 20px;
@@ -210,6 +227,7 @@ section {
 
     @include mobileMQ {
       width: 100%;
+      margin: 10px;
     }
 
     .message-container-screen {
@@ -303,7 +321,7 @@ section {
       overflow-y: auto;
 
       @include mobileMQ {
-        max-height: 50vh;
+        max-height: 45vh;
       }
 
       li {
@@ -376,11 +394,14 @@ section {
 
   //note section
   .note {
+    display: flex;
+    flex-direction: column;
     background-color: #BAB2B5;
     margin: 20px;
     border-radius: 10px;
 
     @include tabletMQ {
+      display: none;
       width: 400px;
     }
 
@@ -390,14 +411,29 @@ section {
 
     form {
       height: 70%;
+      margin-bottom: 5px;
+      margin-top: 5px;
     }
 
     .text-area {
       width: 100%;
       height: 100%;
     }
+
+    .button-container {
+      align-self: flex-end;
+      display: flex;
+      justify-content:flex-end;
+    }
+
+    button {
+      width: 70px;
+      margin-right: 20px;
+      
+    }
   }
 
+  //when all lists are completed, it shows complete stamp mark
   .to-do-complete {
     position: absolute;
     right: 10px;

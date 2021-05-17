@@ -67,7 +67,7 @@ function Create(props) {
                         </div>
                             <div className="input-container">
                             <label htmlFor=""></label>
-                            <input type="text" placeholder="PASSWORD(optional)" onChange={(e) => { setPassword(e.target.value) }} />
+                            <input type="password" placeholder="PASSWORD(optional)" onChange={(e) => { setPassword(e.target.value) }} />
                         </div>
                         <button type="submit">CREATE</button>
                     </form>}

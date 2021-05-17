@@ -25,7 +25,7 @@ const Password = ({ password, isPassword, setAuthorized, setUserName }) => {
                     isPassword?
                     <div>
                         <label className="sr-only" htmlFor="password"></label>
-                        <input className="password-container" type="text" id="password" value={typedPassword} placeholder="PASSWORD" onChange={(e) => { setTypedPassword(e.target.value) }} />
+                        <input className="password-container" type="password" id="password" value={typedPassword} placeholder="PASSWORD" onChange={(e) => { setTypedPassword(e.target.value) }} />
                     </div>
                 
                     : <div></div>
