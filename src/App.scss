@@ -34,11 +34,13 @@ main {
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 20px;
   font-size: small;
 }
 
@@ -148,6 +150,10 @@ section {
 }
 
 .room {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: 1300px;
 
@@ -161,11 +167,34 @@ section {
     justify-content: space-between;
     margin-top: 20px;
 
+    @include tabletMQ {
+      justify-content: center;
+    }
+
   }
+
+  .button-container {
+      display: flex;
+      margin-left: 20px;
+    }
+
+    .chat-toggle, .note-toggle, .toDo-toggle {
+      width: 70px;
+      margin-right: 10px;
+
+      &:hover, &:focus {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+    }
 
   .chat, .note {
      width: 30%;
      height: 400px;
+
+     @include tabletMQ {
+      display: none;
+    }
   }
 
   //chat section
@@ -174,6 +203,14 @@ section {
     background-color: white;
     border-radius: 10px;
     margin: 20px;
+
+    @include tabletMQ {
+      width: 400px;
+    }
+
+    @include mobileMQ {
+      width: 100%;
+    }
 
     .message-container-screen {
       display: flex;
@@ -238,6 +275,14 @@ section {
   .to-do-list-container {
     width: 40%;
 
+    @include tabletMQ {
+      width: 400px;
+    }
+
+    @include mobileMQ {
+      width: 100%;
+    }
+
     ul {
       position: relative;
       padding: 20px;
@@ -293,6 +338,32 @@ section {
         }
       }
     }
+
+    .add-to-do {
+      display: flex;
+      flex-direction: row;
+
+      form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+
+        input {
+          width: 70%;
+          height: 50px;
+          background-color: lightgray;
+          border: none;
+          padding: 0 10px;
+          margin-right: 10px;
+        }
+
+        button {
+          width: 30%;
+          height: 50px;
+        }
+      }
+    }
   }
 
   //note section
@@ -301,40 +372,23 @@ section {
     margin: 20px;
     border-radius: 10px;
 
+    @include tabletMQ {
+      width: 400px;
+    }
+
+    @include mobileMQ {
+      width: 100%;
+    }
+
+    form {
+      height: 75%;
+    }
+
     .text-area {
+      width: 100%;
       height: 100%;
     }
   }
-
-
-
-
-
-.add-to-do {
-  display: flex;
-  flex-direction: row;
-
-  form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-
-    input {
-      width: 70%;
-      height: 50px;
-      background-color: lightgray;
-      border: none;
-      padding: 0 10px;
-      margin-right: 10px;
-    }
-
-    button {
-      width: 30%;
-      height: 50px;
-    }
-  }
-}
 
   .to-do-complete {
     position: absolute;
@@ -351,6 +405,11 @@ section {
 
 .password {
   width: 30%;
+
+  @include tabletMQ {
+      width: 250px;
+    }
+
 
   .password-container {
     width: 100%;
