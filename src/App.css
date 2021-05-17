@@ -630,6 +630,10 @@ section {
   margin: 3px;
 }
 
+.room .chat .users-container .active-users-container > p .active-user {
+  padding: 0 10px;
+}
+
 .room .to-do-list-container {
   width: 40%;
 }
