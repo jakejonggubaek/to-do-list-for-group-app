@@ -678,6 +678,7 @@ section {
   list-style: none;
   border-radius: 10px;
   color: #2b5876;
+  height: 270px;
   max-height: 270px;
   overflow-y: auto;
 }
