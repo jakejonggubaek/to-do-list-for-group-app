@@ -261,7 +261,10 @@ section {
     }
 
     .users-container {
-      .active-users-container > p {
+
+      
+
+      .active-users-container > div {
         display: flex;
         padding: 0 10px;
 
@@ -270,7 +273,7 @@ section {
         }
 
         .active-user {
-          padding: 0 10px;
+          margin: 0 10px;
         }
       }
     }

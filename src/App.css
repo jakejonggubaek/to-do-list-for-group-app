@@ -619,19 +619,19 @@ section {
   margin-left: 5px;
 }
 
-.room .chat .users-container .active-users-container > p {
+.room .chat .users-container .active-users-container > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   padding: 0 10px;
 }
 
-.room .chat .users-container .active-users-container > p div {
+.room .chat .users-container .active-users-container > div div {
   margin: 3px;
 }
 
-.room .chat .users-container .active-users-container > p .active-user {
-  padding: 0 10px;
+.room .chat .users-container .active-users-container > div .active-user {
+  margin: 0 10px;
 }
 
 .room .to-do-list-container {
