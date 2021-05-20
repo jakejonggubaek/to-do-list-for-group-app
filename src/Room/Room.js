@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-import Loading from './Loading';
+import Loading from '../Loading';
 import Password from './Password/Password';
 import Chat from './Chat/Chat';
 import ToDoList from './ToDoList/ToDoList';

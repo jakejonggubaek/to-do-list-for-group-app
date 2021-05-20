@@ -1,8 +1,8 @@
-import './App.css';
+import './styles/App.css';
 import Header from './Header';
 import Footer from './Footer';
-import Landing from './Landing';
-import Room from './Room';
+import Landing from './Landing/Landing';
+import Room from './Room/Room';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {

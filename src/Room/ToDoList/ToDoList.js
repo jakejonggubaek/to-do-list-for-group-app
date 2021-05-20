@@ -1,4 +1,4 @@
-import bin from '../garbage.png';
+import bin from '../../assets/garbage.png';
 
 const ToDoList = ({toDo, setToDo, toDoList, setToDoList, displayedToDoList, allDone}) => {
 
